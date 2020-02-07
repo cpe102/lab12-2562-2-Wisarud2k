@@ -18,3 +18,24 @@ int main()
 }
 
 //Write definition of stat() here 
+void stat(const double a[],int n,double b[]){
+    double sum=0,sd,av,max=a[0],min=a[0],xpow=0;
+    for(int i=0;i<n;i++){
+        sum+=a[i];
+        xpow+=pow(a[i],2);
+        if(a[i]>max){
+            max=a[i];
+        }
+        if(a[i]<min){
+            min=a[i];
+        }
+
+    }
+    av=sum/n;
+    sd=sqrt((xpow/n)-pow(av,2));
+    b[0]=av;
+    b[1]=sd;
+    b[2]=max;
+    b[3]=min;
+    
+}
